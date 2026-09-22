@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
           phraseButton.type = 'button';
           phraseButton.className = 'search-phrase-suggestion';
           phraseButton.setAttribute('role', 'option');
-          phraseButton.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg><span></span>`;
+          phraseButton.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"../><path d="m16 16 4 4"/></svg><span></span>`;
           phraseButton.querySelector('span').textContent = phrase;
           phraseButton.addEventListener('mousedown', event => event.preventDefault());
           phraseButton.addEventListener('click', () => submitSearch(phrase));
