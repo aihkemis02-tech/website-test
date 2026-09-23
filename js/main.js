@@ -414,4 +414,48 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!window.confirm(form.dataset.confirm)) event.preventDefault();
     });
   });
+
+  // Product detail image zoom lightbox
+  const galleryMainEl = document.getElementById('galleryMain');
+  if (galleryMainEl) {
+    const lightboxModal = document.createElement('div');
+    lightboxModal.className = 'image-lightbox-modal';
+    lightboxModal.innerHTML = `
+      <div class="image-lightbox-backdrop"></div>
+      <div class="image-lightbox-dialog">
+        <button type="button" class="image-lightbox-close" aria-label="Kapat">&times;</button>
+        <img src="" alt="" class="image-lightbox-img" />
+      </div>
+    `;
+    document.body.appendChild(lightboxModal);
+
+    const lbImg = lightboxModal.querySelector('.image-lightbox-img');
+    const lbClose = lightboxModal.querySelector('.image-lightbox-close');
+    const lbBackdrop = lightboxModal.querySelector('.image-lightbox-backdrop');
+
+    const closeLightbox = () => {
+      lightboxModal.classList.remove('open');
+      document.body.style.overflow = '';
+    };
+
+    const openLightbox = (src, alt) => {
+      if (!src) return;
+      lbImg.src = src;
+      lbImg.alt = alt || 'Büyük ürün görseli';
+      lightboxModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    };
+
+    lbClose.addEventListener('click', closeLightbox);
+    lbBackdrop.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && lightboxModal.classList.contains('open')) closeLightbox();
+    });
+
+    galleryMainEl.style.cursor = 'zoom-in';
+    galleryMainEl.addEventListener('click', () => {
+      const img = galleryMainEl.querySelector('img');
+      if (img) openLightbox(img.currentSrc || img.src, img.alt);
+    });
+  }
 });
