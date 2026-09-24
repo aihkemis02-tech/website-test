@@ -456,7 +456,7 @@ p { margin: 0; }
 .product-card--cp .thumb img { width: 47%; padding: 8px; }
 .product-card--proyem .thumb img { width: 125%; height: 125%; max-width: none; padding: 0; object-fit: contain; mix-blend-mode: multiply; }
 .product-card--balcilar .thumb { background: radial-gradient(circle at center, #ffffff 45%, #eff6f2 100%); }
-.product-card--balcilar .thumb img { width: auto; height: 94%; max-width: 90%; padding: 4px; object-fit: contain; filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.12)); }
+.product-card--balcilar .thumb img { width: 100%; height: 100%; max-width: 100%; padding: 4px; object-fit: contain; filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.12)); }
 .product-card:hover .thumb img { transform: scale(1.06); }
 .thumb .placeholder, .gallery-main .placeholder { width: 58px; color: var(--sage); }
 .badge { position: absolute; top: 14px; left: 14px; max-width: calc(100% - 28px); overflow: hidden; padding: 5px 10px; border-radius: 30px; color: var(--forest-dark); background: linear-gradient(135deg, rgba(251,231,192,.99), rgba(244,181,93,.9)); font-size: .68rem; font-weight: 800; text-overflow: ellipsis; white-space: nowrap; box-shadow: 0 6px 18px rgba(7,47,42,.12); }
@@ -513,7 +513,7 @@ p { margin: 0; }
 .gallery-main > img { width: 100%; height: 100%; padding: 24px; object-fit: contain; object-position: center; background: #fff; }
 .gallery-main--cp > img { width: auto; height: 100%; max-width: 100%; padding: 20px; background: transparent; object-fit: contain; object-position: center; }
 .gallery-main--balcilar { background: radial-gradient(circle at center, #ffffff 40%, #eef5f1 100%); }
-.gallery-main--balcilar > img { width: auto; height: 96%; max-width: 92%; padding: 8px; background: transparent; object-fit: contain; filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.14)); }
+.gallery-main--balcilar > img { width: 100%; height: 100%; max-width: 100%; padding: 8px; background: transparent; object-fit: contain; filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.14)); }
 .gallery-main--accessory { background: #fff; }
 .gallery-main--accessory > img { width: 100%; height: 100%; padding: 10px; object-fit: contain; object-position: center; }
 .gallery-control { position: absolute; top: 50%; display: grid; place-items: center; width: 42px; height: 42px; border: 0; border-radius: 50%; color: var(--forest); background: rgba(255, 255, 255, .92); box-shadow: 0 5px 15px rgba(0, 0, 0, .12); cursor: pointer; transform: translateY(-50%); }
