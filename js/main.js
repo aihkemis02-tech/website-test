@@ -332,10 +332,10 @@ document.addEventListener('DOMContentLoaded', () => {
     catalog.querySelectorAll('[data-product-card]').forEach(card => {
       const text = (card.dataset.searchText || '').toLocaleLowerCase('tr-TR');
       const cardBrand = (card.dataset.brand || '').trim().toLocaleLowerCase('tr-TR');
-      const cardGroups = (card.dataset.group || '').trim().split(/\s+/);
+      const cardGroup = (card.dataset.group || '').trim();
       const matchesGroup = !group
-        || (group === 'aksesuar' && cardGroups.some(g => g.startsWith('aksesuar-')))
-        || cardGroups.includes(group);
+        || (group === 'aksesuar' && cardGroup.startsWith('aksesuar-'))
+        || cardGroup === group;
       const matchesSearch = terms.every(term => text.includes(term));
       const matchesBrand = !brand || cardBrand === brand;
       card.hidden = !(matchesGroup && matchesSearch && matchesBrand);
